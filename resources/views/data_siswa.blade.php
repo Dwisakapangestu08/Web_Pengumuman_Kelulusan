@@ -30,9 +30,11 @@
             </div>
         @endif
 
-        <button type="button" class="btn btn-primary mr-5 my-3" data-toggle="modal" data-target="#importExcel">
+        <button type="button" class="btn btn-primary  my-3" data-toggle="modal" data-target="#importExcel">
             IMPORT FILE EXCEL
         </button>
+        <a href="/data-siswa/delete/" class="btn btn-danger my-3"
+            onclick="return confirm('Yakin ingin menghapus semua data?')">HAPUS SEMUA DATA</a>
 
         <!-- Import Excel -->
         <div class="modal fade" id="importExcel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

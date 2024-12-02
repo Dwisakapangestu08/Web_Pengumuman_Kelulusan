@@ -30,3 +30,4 @@ Route::get('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', [UserController::class, 'index'])->middleware('auth');
 Route::get('/data-siswa', [UserController::class, 'data_siswa']);
 Route::post('/data-siswa', [UserController::class, 'import_excel']);
+Route::get('/data-siswa/delete/', [UserController::class, 'delete_siswa']);

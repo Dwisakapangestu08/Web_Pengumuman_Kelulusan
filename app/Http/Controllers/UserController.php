@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\UsersImport;
 use App\Models\User;
+use App\Imports\UsersImport;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -21,6 +22,13 @@ class UserController extends Controller
         return view('data_siswa', [
             'siswa' => $data_siswa
         ]);
+    }
+
+    public function delete_siswa()
+    {
+        $sql = "DELETE FROM users";
+        DB::delete($sql);
+        return redirect('/data-siswa');
     }
 
     public function import_excel(Request $request)
